@@ -26,7 +26,7 @@ Create a `.env` file in the project root and set the following variables:
 
 ```env
 PORT=5000
-MONGO_URI=mongodb+srv://user:pass@cluster.mongodb.net/expense_db
+MONGO_URI=your URI
 SERVICE_ACCOUNT_PATH=./serviceAccountKey.json
 ```
 
