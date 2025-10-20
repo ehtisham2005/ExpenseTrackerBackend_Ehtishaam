@@ -1,0 +1,28 @@
+{
+  "name": "expense-tracker-backend",
+  "version": "1.0.0",
+  "description": "Backend for an Expense Tracker using Express, MongoDB, and Firebase.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [
+    "express",
+    "mongodb",
+    "firebase"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "firebase-admin": "^11.11.0",
+    "mongoose": "^7.6.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "type": "commonjs"
+}

@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "b2d2a3af-f696-427c-8b68-7dd17fa2b4c6",
+		"name": "ExpenseTrackerBackend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45110294",
+		"_collection_link": "https://ehtishaam.postman.co/workspace/Ehtishaam's-Workspace~0ccd05b9-ed58-4607-875a-38378ea2012d/collection/45110294-b2d2a3af-f696-427c-8b68-7dd17fa2b4c6?action=share&source=collection_link&creator=45110294"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ehtishaam.test@tracker.com\",\r\n    \"password\": \"mysecurepassword123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "newExpense",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjlkMjEzMGZlZjAyNTg3ZmQ4ODYxODg2OTgyMjczNGVmNzZhMTExNjUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZXhwZW5zZS10cmFja2VyLWVodGlzaGFhbSIsImF1ZCI6ImV4cGVuc2UtdHJhY2tlci1laHRpc2hhYW0iLCJhdXRoX3RpbWUiOjE3NjA5MzgzNDAsInVzZXJfaWQiOiJ6QnhhRW5EakZqZGU2eER2SzBKTFNaeER5bGcxIiwic3ViIjoiekJ4YUVuRGpGamRlNnhEdkswSkxTWnhEeWxnMSIsImlhdCI6MTc2MDkzODM0MCwiZXhwIjoxNzYwOTQxOTQwLCJlbWFpbCI6ImVodGlzaGFhbS50ZXN0QHRyYWNrZXIuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImVodGlzaGFhbS50ZXN0QHRyYWNrZXIuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.mvbH4eWcQpBGnYpm4LafP4xKcHl_4wpGNlHs0abVmFPfEO7zgfe30Xp2E82fSfwyL-JUfQeQb0WUUiLZqdTf3qLQ59hKTRMM0lDSDW3N8DNXmaKbtJbqd4gdLPeplzfjzpeoAx3dShJU8kHHvvYtEOxb7fSWmbkHGSswBJ43ai0strt30VnW_LlRZsMkqxQ4r8g24hzPtyg1w7XdwL1M3bL4i0sp0Jma_IrqUhxPZtvYbxK3ixqbJgnh5ZcJhqGD0x20TrZ607lhskRzvQdKcGXdm0HfAo0nYaDja7Gho3wt4afsvz8SrpSEZybpDAfI0y7BNUeaOH_SNxMuaVsN4g",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Fuel refill\",\r\n    \"amount\": 120.00,\r\n    \"category\": \"Transport\",\r\n    \"date\": \"2025-10-15\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/expenses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"expenses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchExpenses",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjlkMjEzMGZlZjAyNTg3ZmQ4ODYxODg2OTgyMjczNGVmNzZhMTExNjUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZXhwZW5zZS10cmFja2VyLWVodGlzaGFhbSIsImF1ZCI6ImV4cGVuc2UtdHJhY2tlci1laHRpc2hhYW0iLCJhdXRoX3RpbWUiOjE3NjA5MzgzNDAsInVzZXJfaWQiOiJ6QnhhRW5EakZqZGU2eER2SzBKTFNaeER5bGcxIiwic3ViIjoiekJ4YUVuRGpGamRlNnhEdkswSkxTWnhEeWxnMSIsImlhdCI6MTc2MDkzODM0MCwiZXhwIjoxNzYwOTQxOTQwLCJlbWFpbCI6ImVodGlzaGFhbS50ZXN0QHRyYWNrZXIuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImVodGlzaGFhbS50ZXN0QHRyYWNrZXIuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.mvbH4eWcQpBGnYpm4LafP4xKcHl_4wpGNlHs0abVmFPfEO7zgfe30Xp2E82fSfwyL-JUfQeQb0WUUiLZqdTf3qLQ59hKTRMM0lDSDW3N8DNXmaKbtJbqd4gdLPeplzfjzpeoAx3dShJU8kHHvvYtEOxb7fSWmbkHGSswBJ43ai0strt30VnW_LlRZsMkqxQ4r8g24hzPtyg1w7XdwL1M3bL4i0sp0Jma_IrqUhxPZtvYbxK3ixqbJgnh5ZcJhqGD0x20TrZ607lhskRzvQdKcGXdm0HfAo0nYaDja7Gho3wt4afsvz8SrpSEZybpDAfI0y7BNUeaOH_SNxMuaVsN4g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/expenses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"expenses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchSingleExpense",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjlkMjEzMGZlZjAyNTg3ZmQ4ODYxODg2OTgyMjczNGVmNzZhMTExNjUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZXhwZW5zZS10cmFja2VyLWVodGlzaGFhbSIsImF1ZCI6ImV4cGVuc2UtdHJhY2tlci1laHRpc2hhYW0iLCJhdXRoX3RpbWUiOjE3NjA5MzgzNDAsInVzZXJfaWQiOiJ6QnhhRW5EakZqZGU2eER2SzBKTFNaeER5bGcxIiwic3ViIjoiekJ4YUVuRGpGamRlNnhEdkswSkxTWnhEeWxnMSIsImlhdCI6MTc2MDkzODM0MCwiZXhwIjoxNzYwOTQxOTQwLCJlbWFpbCI6ImVodGlzaGFhbS50ZXN0QHRyYWNrZXIuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImVodGlzaGFhbS50ZXN0QHRyYWNrZXIuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.mvbH4eWcQpBGnYpm4LafP4xKcHl_4wpGNlHs0abVmFPfEO7zgfe30Xp2E82fSfwyL-JUfQeQb0WUUiLZqdTf3qLQ59hKTRMM0lDSDW3N8DNXmaKbtJbqd4gdLPeplzfjzpeoAx3dShJU8kHHvvYtEOxb7fSWmbkHGSswBJ43ai0strt30VnW_LlRZsMkqxQ4r8g24hzPtyg1w7XdwL1M3bL4i0sp0Jma_IrqUhxPZtvYbxK3ixqbJgnh5ZcJhqGD0x20TrZ607lhskRzvQdKcGXdm0HfAo0nYaDja7Gho3wt4afsvz8SrpSEZybpDAfI0y7BNUeaOH_SNxMuaVsN4g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/expenses/68f5caa3d5a5a1506bcaa2f2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"expenses",
+						"68f5caa3d5a5a1506bcaa2f2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateExpense",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjlkMjEzMGZlZjAyNTg3ZmQ4ODYxODg2OTgyMjczNGVmNzZhMTExNjUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZXhwZW5zZS10cmFja2VyLWVodGlzaGFhbSIsImF1ZCI6ImV4cGVuc2UtdHJhY2tlci1laHRpc2hhYW0iLCJhdXRoX3RpbWUiOjE3NjA5MzgzNDAsInVzZXJfaWQiOiJ6QnhhRW5EakZqZGU2eER2SzBKTFNaeER5bGcxIiwic3ViIjoiekJ4YUVuRGpGamRlNnhEdkswSkxTWnhEeWxnMSIsImlhdCI6MTc2MDkzODM0MCwiZXhwIjoxNzYwOTQxOTQwLCJlbWFpbCI6ImVodGlzaGFhbS50ZXN0QHRyYWNrZXIuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImVodGlzaGFhbS50ZXN0QHRyYWNrZXIuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.mvbH4eWcQpBGnYpm4LafP4xKcHl_4wpGNlHs0abVmFPfEO7zgfe30Xp2E82fSfwyL-JUfQeQb0WUUiLZqdTf3qLQ59hKTRMM0lDSDW3N8DNXmaKbtJbqd4gdLPeplzfjzpeoAx3dShJU8kHHvvYtEOxb7fSWmbkHGSswBJ43ai0strt30VnW_LlRZsMkqxQ4r8g24hzPtyg1w7XdwL1M3bL4i0sp0Jma_IrqUhxPZtvYbxK3ixqbJgnh5ZcJhqGD0x20TrZ607lhskRzvQdKcGXdm0HfAo0nYaDja7Gho3wt4afsvz8SrpSEZybpDAfI0y7BNUeaOH_SNxMuaVsN4g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Lunch with team (Updated)\",\r\n    \"amount\": 50.00,\r\n    \"category\": \"Household\",\r\n    \"date\": \"2025-10-20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/expenses/68f5caa3d5a5a1506bcaa2f2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"expenses",
+						"68f5caa3d5a5a1506bcaa2f2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "monthlyReport",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjlkMjEzMGZlZjAyNTg3ZmQ4ODYxODg2OTgyMjczNGVmNzZhMTExNjUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZXhwZW5zZS10cmFja2VyLWVodGlzaGFhbSIsImF1ZCI6ImV4cGVuc2UtdHJhY2tlci1laHRpc2hhYW0iLCJhdXRoX3RpbWUiOjE3NjA5MzgzNDAsInVzZXJfaWQiOiJ6QnhhRW5EakZqZGU2eER2SzBKTFNaeER5bGcxIiwic3ViIjoiekJ4YUVuRGpGamRlNnhEdkswSkxTWnhEeWxnMSIsImlhdCI6MTc2MDkzODM0MCwiZXhwIjoxNzYwOTQxOTQwLCJlbWFpbCI6ImVodGlzaGFhbS50ZXN0QHRyYWNrZXIuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImVodGlzaGFhbS50ZXN0QHRyYWNrZXIuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.mvbH4eWcQpBGnYpm4LafP4xKcHl_4wpGNlHs0abVmFPfEO7zgfe30Xp2E82fSfwyL-JUfQeQb0WUUiLZqdTf3qLQ59hKTRMM0lDSDW3N8DNXmaKbtJbqd4gdLPeplzfjzpeoAx3dShJU8kHHvvYtEOxb7fSWmbkHGSswBJ43ai0strt30VnW_LlRZsMkqxQ4r8g24hzPtyg1w7XdwL1M3bL4i0sp0Jma_IrqUhxPZtvYbxK3ixqbJgnh5ZcJhqGD0x20TrZ607lhskRzvQdKcGXdm0HfAo0nYaDja7Gho3wt4afsvz8SrpSEZybpDAfI0y7BNUeaOH_SNxMuaVsN4g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/reports/monthly?month=10&year=2025",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"reports",
+						"monthly"
+					],
+					"query": [
+						{
+							"key": "month",
+							"value": "10"
+						},
+						{
+							"key": "year",
+							"value": "2025"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "categoryReport",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjlkMjEzMGZlZjAyNTg3ZmQ4ODYxODg2OTgyMjczNGVmNzZhMTExNjUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZXhwZW5zZS10cmFja2VyLWVodGlzaGFhbSIsImF1ZCI6ImV4cGVuc2UtdHJhY2tlci1laHRpc2hhYW0iLCJhdXRoX3RpbWUiOjE3NjA5MzgzNDAsInVzZXJfaWQiOiJ6QnhhRW5EakZqZGU2eER2SzBKTFNaeER5bGcxIiwic3ViIjoiekJ4YUVuRGpGamRlNnhEdkswSkxTWnhEeWxnMSIsImlhdCI6MTc2MDkzODM0MCwiZXhwIjoxNzYwOTQxOTQwLCJlbWFpbCI6ImVodGlzaGFhbS50ZXN0QHRyYWNrZXIuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImVodGlzaGFhbS50ZXN0QHRyYWNrZXIuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.mvbH4eWcQpBGnYpm4LafP4xKcHl_4wpGNlHs0abVmFPfEO7zgfe30Xp2E82fSfwyL-JUfQeQb0WUUiLZqdTf3qLQ59hKTRMM0lDSDW3N8DNXmaKbtJbqd4gdLPeplzfjzpeoAx3dShJU8kHHvvYtEOxb7fSWmbkHGSswBJ43ai0strt30VnW_LlRZsMkqxQ4r8g24hzPtyg1w7XdwL1M3bL4i0sp0Jma_IrqUhxPZtvYbxK3ixqbJgnh5ZcJhqGD0x20TrZ607lhskRzvQdKcGXdm0HfAo0nYaDja7Gho3wt4afsvz8SrpSEZybpDAfI0y7BNUeaOH_SNxMuaVsN4g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/reports/category?category=Transport",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"reports",
+						"category"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Transport"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjlkMjEzMGZlZjAyNTg3ZmQ4ODYxODg2OTgyMjczNGVmNzZhMTExNjUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZXhwZW5zZS10cmFja2VyLWVodGlzaGFhbSIsImF1ZCI6ImV4cGVuc2UtdHJhY2tlci1laHRpc2hhYW0iLCJhdXRoX3RpbWUiOjE3NjA5MzgzNDAsInVzZXJfaWQiOiJ6QnhhRW5EakZqZGU2eER2SzBKTFNaeER5bGcxIiwic3ViIjoiekJ4YUVuRGpGamRlNnhEdkswSkxTWnhEeWxnMSIsImlhdCI6MTc2MDkzODM0MCwiZXhwIjoxNzYwOTQxOTQwLCJlbWFpbCI6ImVodGlzaGFhbS50ZXN0QHRyYWNrZXIuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImVodGlzaGFhbS50ZXN0QHRyYWNrZXIuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.mvbH4eWcQpBGnYpm4LafP4xKcHl_4wpGNlHs0abVmFPfEO7zgfe30Xp2E82fSfwyL-JUfQeQb0WUUiLZqdTf3qLQ59hKTRMM0lDSDW3N8DNXmaKbtJbqd4gdLPeplzfjzpeoAx3dShJU8kHHvvYtEOxb7fSWmbkHGSswBJ43ai0strt30VnW_LlRZsMkqxQ4r8g24hzPtyg1w7XdwL1M3bL4i0sp0Jma_IrqUhxPZtvYbxK3ixqbJgnh5ZcJhqGD0x20TrZ607lhskRzvQdKcGXdm0HfAo0nYaDja7Gho3wt4afsvz8SrpSEZybpDAfI0y7BNUeaOH_SNxMuaVsN4g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
